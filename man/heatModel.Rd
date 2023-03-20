@@ -21,37 +21,37 @@ heatModel(
 )
 }
 \arguments{
-\item{time:}{boiler-plate for ReacTran (time)}
+\item{time}{boiler-plate for ReacTran (time)}
 
-\item{Temp:}{boiler-plate for ReacTran (temperature)
-This also allows to make both available inside the function, which is useful 
+\item{Temp}{boiler-plate for ReacTran (temperature)
+This also allows to make both available inside the function, which is useful
 if you need to do time or temperature dependent changes (such as k = f(T) )
 (hook for future development)}
 
-\item{pars:}{boiler-plate for ReacTran, I suspect this is a better way to pass T_surf and friends...}
+\item{pars}{boiler-plate for ReacTran, I suspect this is a better way to pass T_surf and friends...}
 
-\item{T_surf:}{surface temperature [°C] or [K]}
+\item{T_surf}{surface temperature [°C] or [K]}
 
-\item{k:}{Heat conductivity [W.m-1.K-1]}
+\item{k}{Heat conductivity [W.m-1.K-1]}
 
-\item{q_moho:}{Heat flux at the moho [W.m-2]}
+\item{q_moho}{Heat flux at the moho [W.m-2]}
 
-\item{rho:}{Specific mass of the crust [km.m-3]}
+\item{rho}{Specific mass of the crust [km.m-3]}
 
-\item{Cp:}{Heat capacity of the crust [J.K-1.kg-1]}
+\item{Cp}{Heat capacity of the crust [J.K-1.kg-1]}
 
-\item{HP:}{Heat production of the rocks [W.m-3]}
+\item{HP}{Heat production of the rocks [W.m-3]}
 
-\item{u:}{Vertical velocity [m.s-1]}
+\item{u}{Vertical velocity [m.s-1]}
 
-\item{grid:}{a ReacTran 1D grid object}
+\item{grid}{a ReacTran 1D grid object}
 
-\item{scaling:}{The size of the time unit. Since 1 sec is very short in crustal heat propagation,
+\item{scaling}{The size of the time unit. Since 1 sec is very short in crustal heat propagation,
 the changes are minute and the steady-state solder struggles to find a solution.
 A higher scaling value, of perphaps 1e7, does help.}
 }
 \value{
-a list with one component, dTdt, the rate of change of temperature for each depth. 
+a list with one component, dTdt, the rate of change of temperature for each depth.
 Not for human consumption, meant to be fed to the ReacTran solvers.
 }
 \description{

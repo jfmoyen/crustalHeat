@@ -16,7 +16,7 @@ columns `Depth`, `Temperature` and the varying parameter (defined in `var`), cor
 
 \item{lwd}{the line width (constant)}
 
-\item{colscale}{the color scale. Discrete. Make sure it has the same length as the number of cases. 
+\item{colscale}{the color scale. Discrete. Make sure it has the same length as the number of cases.
 If not supplied, it tries to give sensible defaults.}
 }
 \value{

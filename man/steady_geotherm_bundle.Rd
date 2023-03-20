@@ -23,37 +23,37 @@ steady_geotherm_bundle(
 )
 }
 \arguments{
+\item{T_surf}{surface temperature [°C] or [K]}
+
+\item{rho}{Specific mass of the crust [km.m-3]}
+
+\item{Cp}{Heat capacity of the crust [J.K-1.kg-1]}
+
+\item{z_moho}{depth to the moho, in [m]}
+
+\item{k}{Heat conductivity [W.m-1.K-1]}
+
+\item{q_moho}{Heat flux at the moho [W.m-2]}
+
+\item{HP}{Heat production of the rocks [W.m-3]}
+
 \item{varying}{(string): the name of the parameter that varies. It changes from `varies_from`
 to `varies_to`, generating a total of `n_curves` curves.
 The value that is may have been supplied is ignored}
 
-\item{z_moho:}{depth to the moho, in [m]}
+\item{varies_from}{minimum value of the varying parameter}
 
-\item{T_surf:}{surface temperature [°C] or [K]}
+\item{varies_to}{maximum value of the varying parameter}
 
-\item{k:}{Heat conductivity [W.m-1.K-1]}
+\item{n_curves}{total number of geotherms to compute}
 
-\item{q_moho:}{Heat flux at the moho [W.m-2]}
+\item{N}{Number of cells in the model}
 
-\item{rho:}{Specific mass of the crust [km.m-3]}
-
-\item{Cp:}{Heat capacity of the crust [J.K-1.kg-1]}
-
-\item{HP:}{Heat production of the rocks [W.m-3]}
-
-\item{varies_from:}{minimum value of the varying parameter}
-
-\item{varies_to:}{maximum value of the varying parameter}
-
-\item{n_curves:}{total number of geotherms to compute}
-
-\item{N:}{Number of cells in the model}
-
-\item{UIsoSI:}{the conversion factors from user-specified values to SI values.
+\item{UItoSI}{the conversion factors from user-specified values to SI values.
 This is a named vector with the names of the parameters, i.e. `z_moho`, `k`, `q_moho`, `rho`, `Cp` and `HP`.
 If not supplied, the function will assume that they are all 1, i.e. values are in SI already.}
 
-\item{model:}{The modelling function}
+\item{model}{The modelling function}
 }
 \value{
 a tibble in "long" format, with depth (in SI units), temperature and the parameters used for each curve

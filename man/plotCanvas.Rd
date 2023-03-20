@@ -10,7 +10,7 @@ plotCanvas(bg)
 \item{bg}{the background. A list containing the following:
 * `image`, in a format that can be read by the system
 * `Tmin`, `Tmax`, the temperature of the left and right border of the image
-* `zmin`, `zmax`, the depth of the top and bottom border of the image, in km. 
+* `zmin`, `zmax`, the depth of the top and bottom border of the image, in km.
    They are depth, so positive numbers, going down.
 * `Tpos`, `zpos`, the position (and labels) of the ticks on each axis. `zpos` is in km. Positive,going down.}
 }

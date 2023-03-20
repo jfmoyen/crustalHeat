@@ -11,8 +11,14 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     dplyr,
+    ggplot2,
     grid,
     magrittr,
+    png,
     ReacTran,
-    tibble
+    rlang,
+    rootSolve,
+    scales,
+    tibble,
+    tidyr
 RoxygenNote: 7.2.3
