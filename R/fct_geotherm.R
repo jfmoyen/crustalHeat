@@ -138,14 +138,21 @@ steady_geotherm_bundle <- function(T_surf, rho, Cp,
                   Cp,
                   HP)
 
-  # These stay constant
-  keep_me <- setdiff(names(cases),varying)
 
-  # Replace the col with the variable, inserting the range of values needed.
-  cases %<>% select(all_of(keep_me)) %>%
-    cbind(replacement) %>%
-    as_tibble() %>%
-    rename("{varying}" := replacement)
+
+  # If we want only one curve, we should ignore the "varying" option
+  if(n_curves > 1 ){
+    # These stay constant
+    keep_me <- setdiff(names(cases),varying)
+
+    # Replace the col with the variable, inserting the range of values needed.
+    cases %<>% select(all_of(keep_me)) %>%
+      cbind(replacement) %>%
+      as_tibble() %>%
+      rename("{varying}" := replacement)
+  }else{
+      cases %<>% as_tibble
+    }
 
   ## The fun starts ! We map the geotherm function to each line of the tibble
   # This is where we convert UI units to SI units
